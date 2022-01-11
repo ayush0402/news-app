@@ -1,4 +1,4 @@
 package com.ayush0402.newsapp
 
-class NewsData {
+data class NewsData(val newsTitle : String) {
 }
