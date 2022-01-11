@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
@@ -52,6 +53,7 @@ class TopHeadlinesFragment : Fragment() {
                 Log.i("api- response","API fetched")
                 binding.topHeadlinesRecyclerView.layoutManager = LinearLayoutManager(activity)
                 binding.topHeadlinesRecyclerView.adapter = TopHeadlinesRecyclerViewAdapter(newsList)
+                binding.topHeadlinesProgressBar.isVisible = false
             },
             { error ->
                 Log.i("api-response","couldn't fetch the API")
