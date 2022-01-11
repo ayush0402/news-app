@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class TopHeadlinesRecyclerViewAdapter(var newsarray: ArrayList<NewsData>) :
     RecyclerView.Adapter<TopHeadlinesRecyclerViewAdapter.TopHeadlinesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopHeadlinesViewHolder {
-        val itemview = LayoutInflater.from(parent.context).inflate(R.id.top_headlines_item_view, parent, false)
+        val itemview = LayoutInflater.from(parent.context).inflate(R.layout.top_headlines_item_view, parent, false)
         return TopHeadlinesViewHolder(itemview)
     }
 
@@ -22,6 +22,6 @@ class TopHeadlinesRecyclerViewAdapter(var newsarray: ArrayList<NewsData>) :
     }
 
     class TopHeadlinesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val v = view.findViewById<TextView>(R.id.top_headlines_item_title)
+        val v : TextView = view.findViewById(R.id.top_headlines_item_title)
     }
 }
