@@ -2,6 +2,7 @@ package com.ayush0402.newsapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebView
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.ayush0402.newsapp.databinding.ActivityMainBinding
