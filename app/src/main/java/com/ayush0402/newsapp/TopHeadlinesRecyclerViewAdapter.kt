@@ -2,18 +2,14 @@ package com.ayush0402.newsapp
 
 import android.content.Intent
 import android.net.Uri
-import android.telecom.Call.Details
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
-
 
 class TopHeadlinesRecyclerViewAdapter(var newsarray: ArrayList<NewsData>) :
     RecyclerView.Adapter<TopHeadlinesRecyclerViewAdapter.TopHeadlinesViewHolder>() {
@@ -29,6 +25,9 @@ class TopHeadlinesRecyclerViewAdapter(var newsarray: ArrayList<NewsData>) :
     override fun onBindViewHolder(holder: TopHeadlinesViewHolder, position: Int) {
         holder.title.text = newsarray[position].newsTitle
         holder.description.text = newsarray[position].newsDescription
+        if (holder.description.text == "null") {
+            holder.description.text = "No description available."
+        }
         Glide.with(holder.image.context).load(newsarray[position].newsImageUrl).into(holder.image)
 
         holder.itemView.setOnClickListener {
@@ -43,8 +42,8 @@ class TopHeadlinesRecyclerViewAdapter(var newsarray: ArrayList<NewsData>) :
     }
 
     class TopHeadlinesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val title : TextView = view.findViewById(R.id.top_headlines_item_title)
-        val description : TextView = view.findViewById(R.id.top_headlines_item_description)
-        val image : ImageView = view.findViewById(R.id.top_headlines_item_image)
+        val title: TextView = view.findViewById(R.id.top_headlines_item_title)
+        val description: TextView = view.findViewById(R.id.top_headlines_item_description)
+        val image: ImageView = view.findViewById(R.id.top_headlines_item_image)
     }
 }
