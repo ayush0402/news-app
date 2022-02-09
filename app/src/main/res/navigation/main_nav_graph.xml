@@ -7,17 +7,37 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.ayush0402.newsapp.HomeFragment"
+        android:name="com.ayush0402.newsapp.Fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchedNewsFragment"
+            app:destination="@id/searchedNewsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/topHeadlinesFragment"
-        android:name="com.ayush0402.newsapp.TopHeadlinesFragment"
+        android:name="com.ayush0402.newsapp.Fragments.TopHeadlinesFragment"
         android:label="fragment_top_headlines"
         tools:layout="@layout/fragment_top_headlines" />
     <fragment
         android:id="@+id/savedNewsFragment"
-        android:name="com.ayush0402.newsapp.SavedNewsFragment"
+        android:name="com.ayush0402.newsapp.Fragments.SavedNewsFragment"
         android:label="fragment_saved_news"
         tools:layout="@layout/fragment_saved_news" />
+    <fragment
+        android:id="@+id/searchedNewsFragment"
+        android:name="com.ayush0402.newsapp.Fragments.SearchedNewsFragment"
+        android:label="fragment_searched_news"
+        tools:layout="@layout/fragment_searched_news" >
+        <argument
+            android:name="query"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="region"
+            app:argType="boolean" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+    </fragment>
 </navigation>

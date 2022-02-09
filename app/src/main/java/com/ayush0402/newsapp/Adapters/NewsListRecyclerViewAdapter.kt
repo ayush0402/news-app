@@ -1,21 +1,22 @@
-package com.ayush0402.newsapp
+package com.ayush0402.newsapp.Adapters
 
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.ayush0402.newsapp.NewsData
+import com.ayush0402.newsapp.R
 import com.bumptech.glide.Glide
 
-class TopHeadlinesRecyclerViewAdapter(var newsarray: ArrayList<NewsData>) :
-    RecyclerView.Adapter<TopHeadlinesRecyclerViewAdapter.TopHeadlinesViewHolder>() {
+class NewsListRecyclerViewAdapter(var newsarray: ArrayList<NewsData>) :
+    RecyclerView.Adapter<NewsListRecyclerViewAdapter.TopHeadlinesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopHeadlinesViewHolder {
         val itemview = LayoutInflater.from(parent.context).inflate(
-            R.layout.top_headlines_item_view,
+            R.layout.news_list_item_view,
             parent,
             false
         )

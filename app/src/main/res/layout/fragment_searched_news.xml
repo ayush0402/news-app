@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchedNewsFragment">
+    android:background="@color/black"
+    tools:context=".Fragments.SearchedNewsFragment">
 
     <ProgressBar
         android:id="@+id/searched_news_progress_bar"
